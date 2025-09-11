@@ -8,6 +8,8 @@ import { EdgeGlow } from "@/components/ui";
 export const Logo = () => {
   return (
     <div className="relative w-full overflow-hidden pt-32 pb-20 bg-gradient-to-bl from-black to-gray-900">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_0.5px,transparent_0.5px),linear-gradient(to_bottom,#80808012_0.5px,transparent_0.5px)] bg-[size:24px_24px]"></div>
+
   {/* Animated background elements */}
   <div className="absolute inset-0 overflow-hidden">
     <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
@@ -16,7 +18,7 @@ export const Logo = () => {
 
   {/* Decorative lines */}
   <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-  <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
+
 
   <div className="relative z-10 w-full max-w-screen-lg mx-auto flex flex-col items-center">
     {/* Enhanced title section */}

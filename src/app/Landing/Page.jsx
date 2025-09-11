@@ -34,9 +34,6 @@ const SplitText = ({ text, delay = 100 }) => {
   );
 };
 
-const NavigationMenu = () => <div></div>;
-const GridBackground = () => <div></div>;
-
 const RadialGradient = ({ className }) => (
   <div className={`absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-transparent ${className}`} />
 );
@@ -227,16 +224,16 @@ const AdquoraLanding = () => {
         <div className="flex justify-center mt-8 space-x-6">
           <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{animationDelay: '1s'}}>
             <span className="relative z-10 flex items-center space-x-2">
-              <span>Get Started</span>
+              <span>Work With Us</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           
-          <button className="group flex items-center space-x-2 px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-full hover:border-blue-500 hover:text-white transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.2s'}}>
+          {/* <button className="group flex items-center space-x-2 px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-full hover:border-blue-500 hover:text-white transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.2s'}}>
             <Play className="w-5 h-5" />
             <span>Watch Demo</span>
-          </button>
+          </button> */}
         </div>
       </div>
       

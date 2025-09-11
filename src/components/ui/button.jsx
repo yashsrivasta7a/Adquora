@@ -9,10 +9,10 @@ const Button = ({
   className, 
   ...props 
 }) => {
-  const baseStyles = "font-semibold rounded-full transition-colors";
+  const baseStyles = "font-semibold rounded-3xl transition-colors";
   
   const variants = {
-    default: "bg-[#010d56] text-white hover:bg-gray-600",
+    default: "bg-blue-500 text-white hover:bg-gray-600",
     secondary: "bg-[#010d56] text-white hover:bg-gray-600",
     outline: "border border-white text-white hover:bg-white hover:text-black"
   };

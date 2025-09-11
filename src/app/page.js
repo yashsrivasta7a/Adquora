@@ -6,9 +6,11 @@ import { Button } from "../components/ui";
 import InfiniteScrollingLogosAnimation from "../components/ui/Infinite-Scrolling-Logos-Animation";
 import AdquoraLanding from "./Landing/Page";
 import TypographyPreloader from "../components/typography-preloader";
-import { BasicDemo } from "./Services/Page";
+import LogoShowcase, { BasicDemo } from "./Services/Page";
 import EdgeGlow from "../components/ui/edge-glow";
 import { Logo } from "./Clients/Page";
+import Testimonials from "./Testimonal/Page";
+import Footer from "./Footer/Page";
 
 
 export default function Page() {
@@ -50,7 +52,15 @@ export default function Page() {
         <>
           <AdquoraLanding />
           <Logo />
-          {showBasicDemo && <BasicDemo />}
+          {/* {showBasicDemo && (
+            <>
+              <BasicDemo />
+            
+            </>
+          )} */}
+          <LogoShowcase />
+          <Testimonials />
+          <Footer />
         </>
       )}
     </div>
