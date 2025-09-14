@@ -81,19 +81,18 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Legal */}
+        {/* Socials */}
         <div>
-          <h4 className="font-semibold mb-4">Legal</h4>
+          <h4 className="font-semibold mb-4">Socials</h4>
           <ul className="space-y-2 text-gray-400 text-sm">
             <li>
-              <a href="/privacy" className="hover:text-white">
-                Privacy Policy
-              </a>
+              <a href="https://twitter.com/adquora" target="_blank" rel="noopener noreferrer" className="hover:text-white">Twitter</a>
             </li>
             <li>
-              <a href="/terms" className="hover:text-white">
-                Terms Of Service
-              </a>
+              <a href="https://linkedin.com/company/adquora" target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://github.com/adquora" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
             </li>
           </ul>
         </div>
