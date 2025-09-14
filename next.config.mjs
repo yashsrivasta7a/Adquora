@@ -6,9 +6,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  swcMinify: true,
   experimental: {
-    turbo: false
+    turbo: {
+      enabled: false
+    }
   }
 };
 
