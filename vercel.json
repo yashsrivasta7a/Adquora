@@ -1,4 +1,14 @@
 {
-  "buildCommand": "npm install --force && npm run build",
-  "installCommand": "npm install --force"
+  "version": 2,
+  "buildCommand": "npm ci && npm run build",
+  "installCommand": "npm ci",
+  "builds": [
+    {
+      "src": "next.config.mjs",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NODE_OPTIONS": "--max_old_space_size=4096"
+  }
 }
