@@ -120,13 +120,14 @@ function LogoCarousel({ columnCount = 2 }) {
   // Memoize the array of logos to prevent unnecessary re-renders
   const allLogos = useMemo(
     () => [
-      { name: "Company 1", id: 1, img: "/company/Picture1.png" },
-      { name: "Company 2", id: 2, img: "/company/Picture2.png" },
-      { name: "Company 3", id: 3, img: "/company/Picture3.png" },
-      { name: "Company 4", id: 4, img: "/company/Picture4.png" },
-      { name: "Company 5", id: 5, img: "/company/Picture5.png" },
-      { name: "Company 6", id: 6, img: "/company/Picture6.png" },
-      { name: "Company 7", id: 7, img: "/company/Picture7.png" },
+      { name: "Amy Lashes & Beauty Products", id: 1, img: "/Clients/amylashesandbeautyproducts.jpg" },
+      { name: "AYMEE", id: 2, img: "/Clients/AYMEE.webp" },
+      { name: "Elite Chuno", id: 3, img: "/Clients/EliteChuno.jpg" },
+      { name: "Medium", id: 4, img: "/Clients/medium.webp" },
+      { name: "Nidhi", id: 5, img: "/Clients/Nidhi.webp" },
+      { name: "Seven Array", id: 6, img: "/Clients/sevenarray.jpg" },
+      { name: "Thapar Dental Clinic", id: 7, img: "/Clients/thapar dental clinic.jpg" },
+      { name: "The Filmsutra", id: 8, img: "/Clients/the_filmsutra.jpg" },
     ],
     []
   )

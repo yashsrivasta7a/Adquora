@@ -173,7 +173,6 @@ const AdquoraLanding = () => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden dark:bg-black bg-black">
 
-      {/* Your Original Components */}
       <BackgroundRippleEffect />
       
       <RadialGradient className="opacity-40 mb-70" />
@@ -192,11 +191,9 @@ const AdquoraLanding = () => {
         size="large"
       />
 
-      {/* New Animated Background Elements */}
       <AnimatedShapes />
       <FloatingStats />
       
-      {/* Interactive Mouse Effect */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-20"
         style={{
@@ -204,7 +201,6 @@ const AdquoraLanding = () => {
         }}
       />
 
-      {/* Your Original Content */}
       <div className="mt-60 w-full relative z-10">
         <div className="text-center flex justify-center">
           <GlowText className="text-8xl md:text-8xl font-extrabold text-blue-400 drop-shadow-[0_0_5px_#5a7fd5]">
@@ -220,11 +216,12 @@ const AdquoraLanding = () => {
           360° Digital Marketing Solutions for Your Brand Growth
         </p>
         
-        {/* Enhanced CTA Buttons */}
         <div className="flex justify-center mt-8 space-x-6">
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{animationDelay: '1s'}}>
+          <button 
+          className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{animationDelay: '1s'}}>
             <span className="relative z-10 flex items-center space-x-2">
-              <span>Work With Us</span>
+         
+              <span >Work With Us</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -237,7 +234,6 @@ const AdquoraLanding = () => {
         </div>
       </div>
       
-      {/* Your Original Logo */}
       <img 
         src="/logo/logo.png" 
         className="absolute h-60 w-auto transform -translate-x-1/2 -translate-y-1/2 -z-10 opacity-100 hover:opacity-80 transition-opacity duration-500" 
@@ -253,7 +249,6 @@ const AdquoraLanding = () => {
         <InfiniteScrollingLogosAnimation />
       </div> */}
       
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="w-6 h-6 text-blue-400" />
       </div>

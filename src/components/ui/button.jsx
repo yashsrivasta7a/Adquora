@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 const Button = ({ 
   children, 
   onClick, 
+  href, 
   variant = "default", 
   size = "default", 
   className, 
@@ -23,15 +24,24 @@ const Button = ({
     lg: "px-8 py-3 text-lg"
   };
 
+  const classes = cn(
+    baseStyles,
+    variants[variant],
+    sizes[size],
+    className
+  );
+
+  if (href) {
+    return (
+      <a href={href} className={classes} {...props}>
+        {children}
+      </a>
+    );
+  }
   return (
     <button
       onClick={onClick}
-      className={cn(
-        baseStyles,
-        variants[variant],
-        sizes[size],
-        className
-      )}
+      className={classes}
       {...props}
     >
       {children}

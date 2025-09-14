@@ -50,15 +50,18 @@ export default function Page() {
       {!showLanding && <TypographyPreloader onComplete={() => setShowLanding(true)} />}
       {showLanding && (
         <>
-          <AdquoraLanding />
-          <Logo />
+          <div id="home-section">
+            <AdquoraLanding />
+            <Logo />
+          </div>
           {/* {showBasicDemo && (
             <>
               <BasicDemo />
-            
             </>
           )} */}
-          <LogoShowcase />
+          <div id="services-section">
+            <LogoShowcase />
+          </div>
           <Testimonials />
           <Footer />
         </>
