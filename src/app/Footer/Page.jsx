@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom Bar - always rendered last, fixed and above glow */}
-      <div className="border-t z-50 border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm fixed bottom-0 left-0 w-full bg-black bg-opacity-90">
+      {/* <div className="border-t z-20 border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm fixed bottom-0 left-0 w-full bg-black bg-opacity-90">
         <div className="mb-4 md:mb-0">
           <p>&copy; 2024 Adquora. All rights reserved.</p>
         </div>
@@ -139,7 +139,7 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-      </div>
+      </div> */}
       {/* Elegant Blueish Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[400px] z-10 pointer-events-none">
         <div className="w-full h-full bg-gray-900 blur-[80px]"></div>

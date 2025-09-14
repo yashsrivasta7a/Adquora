@@ -87,23 +87,23 @@ const AnimatedShapes = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {/* Floating Icons */}
     {[
-      { Icon: Zap, delay: 0, x: '30%', y: '20%' },
-      { Icon: TrendingUp, delay: 1000, x: '85%', y: '30%' },
-      { Icon: Users, delay: 2000, x: '15%', y: '50%' },
-      { Icon: Target, delay: 3000, x: '80%', y: '75%' },
+      { Icon: Zap, delay: 0, x: ['20%', '30%'], y: ['15%', '20%'] },
+      { Icon: TrendingUp, delay: 1000, x: ['80%', '85%'], y: ['25%', '30%'] },
+      { Icon: Users, delay: 2000, x: ['10%', '15%'], y: ['45%', '50%'] },
+      { Icon: Target, delay: 3000, x: ['75%', '80%'], y: ['70%', '75%'] },
     ].map(({ Icon, delay, x, y }, i) => (
       <div
         key={i}
         className="absolute animate-float opacity-30 hover:opacity-60 transition-opacity"
         style={{
-          left: x,
-          top: y,
+          left: window.innerWidth < 640 ? x[0] : x[1],
+          top: window.innerWidth < 640 ? y[0] : y[1],
           animationDelay: `${delay}ms`,
           animationDuration: '6s'
         }}
       >
-        <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
-          <Icon className="w-8 h-8 text-blue-400" />
+        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
+          <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
         </div>
       </div>
     ))}
@@ -131,23 +131,23 @@ const AnimatedShapes = () => (
 const FloatingStats = () => (
   <div className="absolute inset-0 pointer-events-none">
     {[
-      { value: '500+', label: 'Clients', x: '5%', y: '30%', delay: '0s' },
-      { value: '99%', label: 'Success', x: '90%', y: '50%', delay: '1s' },
-      { value: '24/7', label: 'Support', x: '10%', y: '80%', delay: '2s' },
+      { value: '500+', label: 'Clients', x: ['2%', '5%'], y: ['20%', '30%'], delay: '0s' },
+      { value: '99%', label: 'Success', x: ['85%', '90%'], y: ['40%', '50%'], delay: '1s' },
+      { value: '24/7', label: 'Support', x: ['5%', '10%'], y: ['70%', '80%'], delay: '2s' },
     ].map((stat, i) => (
       <div
         key={i}
         className="absolute animate-float-up opacity-80"
         style={{
-          left: stat.x,
-          top: stat.y,
+          left: window.innerWidth < 640 ? stat.x[0] : stat.x[1],
+          top: window.innerWidth < 640 ? stat.y[0] : stat.y[1],
           animationDelay: stat.delay,
           animationDuration: '8s'
         }}
       >
-        <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-md border border-blue-500/30 rounded-xl p-4 shadow-2xl">
-          <div className="text-2xl font-bold text-blue-400 mb-1">{stat.value}</div>
-          <div className="text-gray-300 text-sm">{stat.label}</div>
+        <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-md border border-blue-500/30 rounded-xl p-2 sm:p-4 shadow-2xl">
+          <div className="text-lg sm:text-2xl font-bold text-blue-400 mb-0.5 sm:mb-1">{stat.value}</div>
+          <div className="text-gray-300 text-xs sm:text-sm">{stat.label}</div>
         </div>
       </div>
     ))}
@@ -203,26 +203,25 @@ const AdquoraLanding = () => {
 
       <div className="mt-60 w-full relative z-10">
         <div className="text-center flex justify-center">
-          <GlowText className="text-8xl md:text-8xl font-extrabold text-blue-400 drop-shadow-[0_0_5px_#5a7fd5]">
+          <GlowText className="text-4xl sm:text-6xl lg:text-8xl font-extrabold text-blue-400 drop-shadow-[0_0_5px_#5a7fd5]">
             <SplitText text="AD" delay={100} />
           </GlowText>
 
-          <GlowText className="text-8xl md:text-8xl font-extrabold text-white drop-shadow-[0_0_5px_#5a7fd5]">
+          <GlowText className="text-4xl sm:text-6xl lg:text-8xl font-extrabold text-white drop-shadow-[0_0_5px_#5a7fd5]">
             <SplitText text="QUORA" delay={300} />
           </GlowText>
         </div>
         
-        <p className="text-center mt-4 text-white font-black animate-fade-in-up">
+        <p className="text-center mt-4 text-white font-black animate-fade-in-up text-sm sm:text-base lg:text-lg px-4">
           360° Digital Marketing Solutions for Your Brand Growth
         </p>
         
-        <div className="flex justify-center mt-8 space-x-6">
+        <div className="flex flex-col sm:flex-row justify-center mt-8 space-y-4 sm:space-y-0 sm:space-x-6">
           <button 
-          className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{animationDelay: '1s'}}>
-            <span className="relative z-10 flex items-center space-x-2">
-         
-              <span >Work With Us</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          className="group relative px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs xs:text-sm sm:text-base font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up w-[90%] xs:w-auto mx-auto xs:mx-4 sm:mx-0" style={{animationDelay: '1s'}}>
+            <span className="relative z-10 flex items-center justify-center space-x-1 xs:space-x-2">
+              <span>Work With Us</span>
+              <ArrowRight className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
@@ -236,11 +235,11 @@ const AdquoraLanding = () => {
       
       <img 
         src="/logo/logo.png" 
-        className="absolute h-60 w-auto transform -translate-x-1/2 -translate-y-1/2 -z-10 opacity-100 hover:opacity-80 transition-opacity duration-500" 
+        className="absolute h-40 sm:h-48 lg:h-60 w-auto transform -translate-x-1/2 -translate-y-1/2 -z-10 opacity-100 hover:opacity-80 transition-opacity duration-500" 
         style={{
           left: '50%',
           top: '50%',
-          transform: `translate(-50%, -50%) translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)`
+          transform: `translate(-50%, -50%) translate(${window.innerWidth > 640 ? mousePos.x * 0.5 : 0}px, ${window.innerWidth > 640 ? mousePos.y * 0.5 : 0}px)`
         }}
       />
       

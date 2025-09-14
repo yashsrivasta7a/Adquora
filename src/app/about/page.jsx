@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import NavigationMenu from "@/components/ui/navigation-menu";
-import Button from "@/components/ui/button";
+
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui";
 
 // Simulated UI components (since we don't have access to the actual ones)
 const EdgeGlow = ({ position, color }) => (
@@ -64,8 +65,8 @@ export default function AboutPage() {
     <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden">
       {/* Menu Button and Overlay */}
       <div className="fixed top-0 left-0 right-0 z-50 h-[100%]">
-        <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-6"> 
-          <Button onClick={() => setIsMenuOpen(true)}>
+        <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-3 xs:p-4 sm:p-6"> 
+          <Button onClick={() => setIsMenuOpen(true)} variant="secondary">
             MENU
           </Button>
         </nav>
@@ -112,21 +113,21 @@ export default function AboutPage() {
 
   <div className="relative z-10">
         {/* Hero Section */}
-        <div className="container mx-auto px-6 pt-32 pb-20 max-w-7xl">
+        <div className="container mx-auto px-3 xs:px-4 sm:px-6 pt-20 xs:pt-24 sm:pt-32 pb-12 xs:pb-16 sm:pb-20 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center mb-20"
+            className="text-center mb-8 xs:mb-12 sm:mb-20"
           >
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="inline-block mb-6"
+              className="inline-block mb-3 xs:mb-4 sm:mb-6"
             >
               <div className="relative">
-                <h1 className="text-7xl md:text-8xl lg:text-9xl font-black mb-4 leading-none text-white">
+                <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-2 xs:mb-3 sm:mb-4 leading-none text-white">
                   About{" "}
                   <span className="text-blue-400">Adquora</span>
                 </h1>
@@ -137,7 +138,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed"
+              className="text-sm xs:text-base sm:text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed px-2 xs:px-4 sm:px-0"
             >
               Transforming brands through <span className="text-blue-400 font-semibold">innovative digital experiences</span> and data-driven growth strategies
             </motion.p>
@@ -160,11 +161,11 @@ export default function AboutPage() {
             className="max-w-5xl mx-auto"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-blue-500/5 rounded-3xl" />
-            <div className="relative bg-gray-900/40 backdrop-blur-xl rounded-3xl p-10 lg:p-16 border border-gray-700/50">
-              <div className="absolute top-6 right-6 w-16 h-16 bg-blue-500 rounded-full opacity-10 blur-sm" />
+            <div className="relative bg-gray-900/40 backdrop-blur-xl rounded-xl xs:rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-10 lg:p-16 border border-gray-700/50">
+              <div className="absolute top-4 right-4 xs:top-5 xs:right-5 sm:top-6 sm:right-6 w-8 h-8 xs:w-12 xs:h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-full opacity-10 blur-sm" />
               
               <motion.h2
-                className="text-4xl lg:text-5xl font-bold mb-8 text-blue-400"
+                className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 xs:mb-6 sm:mb-8 text-blue-400"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -172,12 +173,12 @@ export default function AboutPage() {
                 About Us
               </motion.h2>
               
-              <div className="prose prose-lg lg:prose-xl prose-invert max-w-none">
+              <div className="prose prose-sm xs:prose-base sm:prose-lg lg:prose-xl prose-invert max-w-none">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="space-y-6"
+                  className="space-y-3 xs:space-y-4 sm:space-y-6"
                 >
                   <p className="text-white leading-relaxed">
                     At Adquora, we are more than a digital marketing agency — we are a{" "}
@@ -195,7 +196,7 @@ export default function AboutPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.9 }}
                   >
-                    <h3 className="text-2xl font-bold text-blue-400 mb-4">What sets us apart?</h3>
+                    <h3 className="text-xl xs:text-xl sm:text-2xl font-bold text-blue-400 mb-2 xs:mb-3 sm:mb-4">What sets us apart?</h3>
                     <p className="text-white leading-relaxed">
                       <span className="text-blue-400 font-semibold">We don't just deliver services, we deliver outcomes.</span> Every campaign is crafted with creativity, backed by data, and executed with precision. We think like strategists, design like creators, and act like partners — ensuring your brand doesn't just survive but thrives in the digital-first world.
                     </p>
@@ -207,7 +208,7 @@ export default function AboutPage() {
                     transition={{ duration: 0.8, delay: 1.1 }}
                     className="pt-4 border-t border-gray-700/50"
                   >
-                    <p className="text-white leading-relaxed text-xl font-medium">
+                    <p className="text-white leading-relaxed text-sm xs:text-base sm:text-xl font-medium">
                       At Adquora, growth isn't a promise — it's the culture we live by.{" "}
                       <span className="text-blue-400 font-bold">We build. We scale. We lead.</span> Together, with you.
                     </p>
