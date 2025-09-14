@@ -83,82 +83,107 @@ const InfiniteScrollingLogosAnimation = () => (
 );
 
 // New Animated Background Elements
-const AnimatedShapes = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Floating Icons */}
-    {[
-      { Icon: Zap, delay: 0, x: ['20%', '30%'], y: ['15%', '20%'] },
-      { Icon: TrendingUp, delay: 1000, x: ['80%', '85%'], y: ['25%', '30%'] },
-      { Icon: Users, delay: 2000, x: ['10%', '15%'], y: ['45%', '50%'] },
-      { Icon: Target, delay: 3000, x: ['75%', '80%'], y: ['70%', '75%'] },
-    ].map(({ Icon, delay, x, y }, i) => (
-      <div
-        key={i}
-        className="absolute animate-float opacity-30 hover:opacity-60 transition-opacity"
-        style={{
-          left: window.innerWidth < 640 ? x[0] : x[1],
-          top: window.innerWidth < 640 ? y[0] : y[1],
-          animationDelay: `${delay}ms`,
-          animationDuration: '6s'
-        }}
-      >
-        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
-          <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
-        </div>
-      </div>
-    ))}
-    
-   
-    
-    {/* Geometric Shapes */}
+const AnimatedShapes = () => {
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-    {/* Code-like Elements */}
-    <div className="absolute top-1/3 right-1/5 text-blue-500/30 font-mono text-sm animate-fade-in-out">
-      <div>{'<digital>'}</div>
-      <div className="ml-4">{'marketing'}</div>
-      <div>{'</digital>'}</div>
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Floating Icons */}
+      {isClient && [
+        { Icon: Zap, delay: 0, x: ['20%', '30%'], y: ['15%', '20%'] },
+        { Icon: TrendingUp, delay: 1000, x: ['80%', '85%'], y: ['25%', '30%'] },
+        { Icon: Users, delay: 2000, x: ['10%', '15%'], y: ['45%', '50%'] },
+        { Icon: Target, delay: 3000, x: ['75%', '80%'], y: ['70%', '75%'] },
+      ].map(({ Icon, delay, x, y }, i) => (
+        <div
+          key={i}
+          className="absolute animate-float opacity-30 hover:opacity-60 transition-opacity"
+          style={{
+            left: window.innerWidth < 640 ? x[0] : x[1],
+            top: window.innerWidth < 640 ? y[0] : y[1],
+            animationDelay: `${delay}ms`,
+            animationDuration: '6s'
+          }}
+        >
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
+            <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+          </div>
+        </div>
+      ))}
+      
+     
+      
+      {/* Geometric Shapes */}
+
+      {/* Code-like Elements */}
+      <div className="absolute top-1/3 right-1/5 text-blue-500/30 font-mono text-sm animate-fade-in-out">
+        <div>{'<digital>'}</div>
+        <div className="ml-4">{'marketing'}</div>
+        <div>{'</digital>'}</div>
+      </div>
+      
+      <div className="absolute bottom-1/4 left-1/5 text-purple-500/30 font-mono text-sm animate-fade-in-out" style={{animationDelay: '2s'}}>
+        <div>{'const growth = () => {'}</div>
+        <div className="ml-4">{'return success;'}</div>
+        <div>{'}'}</div>
+      </div>
     </div>
-    
-    <div className="absolute bottom-1/4 left-1/5 text-purple-500/30 font-mono text-sm animate-fade-in-out" style={{animationDelay: '2s'}}>
-      <div>{'const growth = () => {'}</div>
-      <div className="ml-4">{'return success;'}</div>
-      <div>{'}'}</div>
-    </div>
-  </div>
-);
+  );
+};
 
 // Animated Stats Cards
-const FloatingStats = () => (
-  <div className="absolute inset-0 pointer-events-none">
-    {[
-      { value: '500+', label: 'Clients', x: ['2%', '5%'], y: ['20%', '30%'], delay: '0s' },
-      { value: '99%', label: 'Success', x: ['85%', '90%'], y: ['40%', '50%'], delay: '1s' },
-      { value: '24/7', label: 'Support', x: ['5%', '10%'], y: ['70%', '80%'], delay: '2s' },
-    ].map((stat, i) => (
-      <div
-        key={i}
-        className="absolute animate-float-up opacity-80"
-        style={{
-          left: window.innerWidth < 640 ? stat.x[0] : stat.x[1],
-          top: window.innerWidth < 640 ? stat.y[0] : stat.y[1],
-          animationDelay: stat.delay,
-          animationDuration: '8s'
-        }}
-      >
-        <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-md border border-blue-500/30 rounded-xl p-2 sm:p-4 shadow-2xl">
-          <div className="text-lg sm:text-2xl font-bold text-blue-400 mb-0.5 sm:mb-1">{stat.value}</div>
-          <div className="text-gray-300 text-xs sm:text-sm">{stat.label}</div>
+const FloatingStats = () => {
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      {[
+        { value: '500+', label: 'Clients', x: ['2%', '5%'], y: ['20%', '30%'], delay: '0s' },
+        { value: '99%', label: 'Success', x: ['85%', '90%'], y: ['40%', '50%'], delay: '1s' },
+        { value: '24/7', label: 'Support', x: ['5%', '10%'], y: ['70%', '80%'], delay: '2s' },
+      ].map((stat, i) => (
+        <div
+          key={i}
+          className="absolute animate-float-up opacity-80"
+          style={{
+            left: window.innerWidth < 640 ? stat.x[0] : stat.x[1],
+            top: window.innerWidth < 640 ? stat.y[0] : stat.y[1],
+            animationDelay: stat.delay,
+            animationDuration: '8s'
+          }}
+        >
+          <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-md border border-blue-500/30 rounded-xl p-2 sm:p-4 shadow-2xl">
+            <div className="text-lg sm:text-2xl font-bold text-blue-400 mb-0.5 sm:mb-1">{stat.value}</div>
+            <div className="text-gray-300 text-xs sm:text-sm">{stat.label}</div>
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 // Main Landing Page Component (Your Original Structure)
 const AdquoraLanding = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
+  useEffect(() => {
+    if (!isClient) return;
+    
     const handleMouseMove = (e) => {
       setMousePos({
         x: (e.clientX / window.innerWidth) * 20,
@@ -168,7 +193,7 @@ const AdquoraLanding = () => {
     
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isClient]);
 
   return (
     <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden dark:bg-black bg-black">
@@ -239,7 +264,7 @@ const AdquoraLanding = () => {
         style={{
           left: '50%',
           top: '50%',
-          transform: `translate(-50%, -50%) translate(${window.innerWidth > 640 ? mousePos.x * 0.5 : 0}px, ${window.innerWidth > 640 ? mousePos.y * 0.5 : 0}px)`
+          transform: `translate(-50%, -50%) translate(${isClient && window.innerWidth > 640 ? mousePos.x * 0.5 : 0}px, ${isClient && window.innerWidth > 640 ? mousePos.y * 0.5 : 0}px)`
         }}
       />
       
