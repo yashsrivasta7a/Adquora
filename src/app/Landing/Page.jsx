@@ -4,11 +4,10 @@ import React, { useState, useEffect } from "react";
 import { ArrowRight, Play, ChevronDown, Zap, TrendingUp, Users, Target } from "lucide-react";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { EdgeGlow, GlowText } from "@/components/ui";
+import { useRouter } from "next/navigation";
 
-// Mock components that match your imports (replace with your actual components)
 const SplitText = ({ text, delay = 100 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), delay);
     return () => clearTimeout(timer);
@@ -91,6 +90,7 @@ const AnimatedShapes = () => {
   }, []);
 
   return (
+    
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Floating Icons */}
       {isClient && [
@@ -176,6 +176,7 @@ const FloatingStats = () => {
 const AdquoraLanding = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
   
   useEffect(() => {
     setIsClient(true);
@@ -244,7 +245,7 @@ const AdquoraLanding = () => {
         <div className="flex flex-col sm:flex-row justify-center mt-8 space-y-4 sm:space-y-0 sm:space-x-6">
           <button 
           className="group relative px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs xs:text-sm sm:text-base font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up  xs:w-auto mx-auto xs:mx-4 sm:mx-0" style={{animationDelay: '1s'}}>
-            <span className="relative z-10 flex items-center justify-center space-x-1 xs:space-x-2">
+            <span className="relative z-10 flex items-center justify-center space-x-1 xs:space-x-2"  onClick={() => { router.push('/contact'); }}>
               <span>Work With Us</span>
               <ArrowRight className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </span>
