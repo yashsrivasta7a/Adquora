@@ -13,6 +13,9 @@ const SplitText = ({ text, delay = 100 }) => {
     return () => clearTimeout(timer);
   }, [delay]);
   
+
+  
+
   return (
     <span className={`inline-block transition-all duration-1000 ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -126,11 +129,7 @@ const AnimatedShapes = () => {
         <div>{'</digital>'}</div>
       </div>
       
-      <div className="absolute bottom-1/4 left-1/5 text-purple-500/30 font-mono text-sm animate-fade-in-out" style={{animationDelay: '2s'}}>
-        <div>{'const growth = () => {'}</div>
-        <div className="ml-4">{'return success;'}</div>
-        <div>{'}'}</div>
-      </div>
+      
     </div>
   );
 };

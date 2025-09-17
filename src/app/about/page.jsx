@@ -173,48 +173,7 @@ export default function AboutPage() {
                 About Us
               </motion.h2>
               
-              <div className="prose prose-sm xs:prose-base sm:prose-lg lg:prose-xl prose-invert max-w-none">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.7 }}
-                  className="space-y-3 xs:space-y-4 sm:space-y-6"
-                >
-                  <p className="text-white leading-relaxed">
-                    At Adquora, we are more than a digital marketing agency — we are a{" "}
-                    <span className="text-blue-400 font-semibold">360° growth partner</span> for ambitious brands. Established in{" "}
-                    <span className="text-blue-400 font-semibold">2022</span> in Delhi NCR, we set out with a bold vision: to simplify digital marketing by bringing every essential service under one roof and driving measurable, lasting impact for our clients.
-                  </p>
-                  
-                  <p className="text-white leading-relaxed">
-                    In today's fast-paced world, businesses juggle multiple agencies for ads, design, content, SEO, and PR — often ending up with scattered strategies and diluted results. That's where we step in.{" "}
-                    <span className="text-blue-400 font-semibold">Adquora brings everything together</span> — Google & Meta Ads, Website Design, Creative Designing, Influencer Marketing & PR, Social Media Management, SEO, and E-commerce Growth Solutions — under one unified approach designed to drive impact.
-                  </p>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.9 }}
-                  >
-                    <h3 className="text-xl xs:text-xl sm:text-2xl font-bold text-blue-400 mb-2 xs:mb-3 sm:mb-4">What sets us apart?</h3>
-                    <p className="text-white leading-relaxed">
-                      <span className="text-blue-400 font-semibold">We don't just deliver services, we deliver outcomes.</span> Every campaign is crafted with creativity, backed by data, and executed with precision. We think like strategists, design like creators, and act like partners — ensuring your brand doesn't just survive but thrives in the digital-first world.
-                    </p>
-                  </motion.div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.1 }}
-                    className="pt-4 border-t border-gray-700/50"
-                  >
-                    <p className="text-white leading-relaxed text-sm xs:text-base sm:text-xl font-medium">
-                      At Adquora, growth isn't a promise — it's the culture we live by.{" "}
-                      <span className="text-blue-400 font-bold">We build. We scale. We lead.</span> Together, with you.
-                    </p>
-                  </motion.div>
-                </motion.div>
-              </div>
+              
             </div>
           </motion.div>
 
