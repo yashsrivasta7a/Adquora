@@ -11,6 +11,7 @@ import EdgeGlow from "../components/ui/edge-glow";
 import { Logo } from "./Clients/Page";
 import Testimonials from "./Testimonal/Page";
 import Footer from "./Footer/Page";
+import ContactPage from "./contact/page";
 
 
 export default function PageClient() {
@@ -69,6 +70,7 @@ export default function PageClient() {
             <LogoShowcase />
           </div>
           <Testimonials />
+          <ContactPage/>
           <Footer />
         </>
       )}

@@ -173,7 +173,7 @@ const ContactPage = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden">
       {/* Menu Button and Overlay */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-[100%]">
+      <div className="fixed top-0 left-0 right-0 z-50 h-auto">
         <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-3 xs:p-4 sm:p-6"> 
           <Button onClick={() => setIsMenuOpen(true)} variant="secondary">
             MENU
@@ -185,9 +185,9 @@ const ContactPage = () => {
       {/* Background Effects */}
       <BackgroundRippleEffect className="opacity-20" />
       <EdgeGlow position="top-left" color="rgba(59, 130, 246, 0.15)" />
-      <EdgeGlow position="top-right" color="rgba(59, 130, 246, 0.10)" />
+      {/* <EdgeGlow position="top-right" color="rgba(59, 130, 246, 0.10)" />
       <EdgeGlow position="bottom-left" color="rgba(59, 130, 246, 0.10)" />
-      <EdgeGlow position="bottom-right" color="rgba(59, 130, 246, 0.15)" />
+      <EdgeGlow position="bottom-right" color="rgba(59, 130, 246, 0.15)" /> */}
 
       {/* Floating Orbs */}
       <motion.div

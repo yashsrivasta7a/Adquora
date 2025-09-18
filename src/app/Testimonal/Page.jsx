@@ -82,14 +82,14 @@ const Testimonials = () => {
     <section className="testimonials-section">
       <div className="testimonials-container">
         <div className="testimonials-header">
-          <h3 className="testimonials-title">Loved by companies worldwide</h3>
+          <h3 className="testimonials-title ">Loved by companies worldwide</h3>
           <p className="testimonials-subtitle">See what our Clients are saying about Adquora</p>
         </div>
 
         <div className="testimonials-marquee-container">
           <MarqueeRow testimonials={row1Testimonials} direction="left" speed={40} />
           <MarqueeRow testimonials={row2Testimonials} direction="right" speed={35} />
-          <MarqueeRow testimonials={row3Testimonials} direction="left" speed={45} />
+          {/* <MarqueeRow testimonials={row3Testimonials} direction="left" speed={45} /> */}
         </div>
       </div>
     </section>
