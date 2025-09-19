@@ -1,11 +1,12 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
-
-// Initialize Resend only when API key is available
+import 'dotenv/config'
 let resend = null;
 if (process.env.RESEND_API_KEY) {
   resend = new Resend(process.env.RESEND_API_KEY);
 }
+
+console.log(resend);
 
 export async function POST(request) {
   try {
@@ -37,7 +38,6 @@ export async function POST(request) {
       );
     }
 
-    // Prepare email content
     const emailContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px; margin-bottom: 20px;">
@@ -66,8 +66,6 @@ export async function POST(request) {
         </div>
       </div>
     `;
-
-    // Auto-reply email content for the user
     const autoReplyContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px; margin-bottom: 20px;">
@@ -107,26 +105,19 @@ export async function POST(request) {
         </div>
       </div>
     `;
-
-    // Send email to admin
     const adminEmail = await resend.emails.send({
-      from: 'Adquora Contact Form <noreply@adquora.com>',
-      to: ['hello@adquora.com'], // Replace with your actual email
+      from: 'onboarding@resend.dev',
+      to : ['info.adquora@gmail.com'],
+      // to: ['hello@adquora.com'],
       subject: `New Contact Form Submission: ${subject}`,
       html: emailContent,
       replyTo: email,
     });
 
-    // Send auto-reply to user
-    const userEmail = await resend.emails.send({
-      from: 'Adquora Team <hello@adquora.com>',
-      to: [email],
-      subject: 'Thank you for contacting Adquora',
-      html: autoReplyContent,
-    });
+   
 
-    if (adminEmail.error || userEmail.error) {
-      console.error('Resend error:', adminEmail.error || userEmail.error);
+    if (adminEmail.error ) {
+      console.error('Resend error:', adminEmail.error );
       return NextResponse.json(
         { error: 'Failed to send email' },
         { status: 500 }

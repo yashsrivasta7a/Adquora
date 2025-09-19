@@ -90,7 +90,6 @@ const ContactPage = () => {
       [name]: value
     }));
     
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -116,7 +115,7 @@ const ContactPage = () => {
 
       const data = await response.json();
 
-      if (response.ok) {
+      if (data.response.ok) {
         setSubmitStatus("success");
         setFormData({
           name: '',
@@ -125,9 +124,7 @@ const ContactPage = () => {
           subject: '',
           message: ''
         });
-      } else {
-        setSubmitStatus("error");
-      }
+      } 
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -270,7 +267,7 @@ const ContactPage = () => {
                 </motion.div>
               )}
 
-              {submitStatus === "error" && (
+              {/* {submitStatus === "error" && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -279,7 +276,7 @@ const ContactPage = () => {
                   <AlertCircle className="w-5 h-5 sm:w-5 sm:h-5 w-4 h-4 text-red-400" />
                   <span className="text-red-400 text-sm sm:text-base">Failed to send message. Please try again.</span>
                 </motion.div>
-              )}
+              )} */}
 
               <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                 <div className="grid md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-3 xs:gap-4 sm:gap-6">

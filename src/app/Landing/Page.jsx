@@ -243,12 +243,13 @@ const AdquoraLanding = () => {
         
         <div className="flex flex-col sm:flex-row justify-center mt-8 space-y-4 sm:space-y-0 sm:space-x-6">
           <button 
-          className="group relative px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs xs:text-sm sm:text-base font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 animate-fade-in-up  xs:w-auto mx-auto xs:mx-4 sm:mx-0" style={{animationDelay: '1s'}}>
-            <span className="relative z-10 flex items-center justify-center space-x-1 xs:space-x-2"  onClick={() => { router.push('/contact'); }}>
+          onClick={()=>router.push('/contact')}
+          className="group relative px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs xs:text-sm sm:text-base font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform  animate-fade-in-up  xs:w-auto mx-auto xs:mx-4 sm:mx-0" style={{animationDelay: '1s'}}>
+            <span className="relative z-10 flex items-center justify-center space-x-1 xs:space-x-2" >
               <span>Work With Us</span>
               <ArrowRight className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           
           {/* <button className="group flex items-center space-x-2 px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-full hover:border-blue-500 hover:text-white transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.2s'}}>

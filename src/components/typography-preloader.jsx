@@ -75,14 +75,14 @@ export default function TypographyPreloader({ onComplete, duration = 1200, class
       className={cn(
         "fixed inset-0 z-50 flex items-center justify-center transition-all ease-in-out overflow-hidden",
         {
-          "bg-gray-50 opacity-100 transform-none duration-300": !isExiting,
+          "bg-[#010204] opacity-100 transform-none duration-300": !isExiting,
           "bg-transparent opacity-0 scale-95 duration-800 pointer-events-none": isExiting,
         },
         className,
       )}
     >
       <div
-        className={cn("absolute bg-black transition-all ease-out", {
+        className={cn("absolute bg-[#010204] transition-all ease-out", {
           "w-4 h-4 rounded-full bottom-4 left-1/2 -translate-x-1/2 duration-0": !showTransition,
           "w-[300vw] h-[300vh] rounded-full bottom-0 left-1/2 -translate-x-1/2 duration-1500":
             showTransition && !isTransitionComplete,
@@ -97,14 +97,14 @@ export default function TypographyPreloader({ onComplete, duration = 1200, class
         })}
       >
         <div className="relative h-24 flex items-center justify-center">
-          <div className="text-7xl md:text-8xl font-bold tracking-tight text-black font-sans" key={currentWordIndex}>
+          <div className="text-7xl md:text-8xl font-bold tracking-tight text-[#51a2ff] font-sans" key={currentWordIndex}>
             {currentWord.text}
           </div>
         </div>
 
-        <div className="w-48 h-0.5 bg-gray-200 relative overflow-hidden rounded-full">
+        <div className="w-48 h-0.5 bg-[#51a2ff] relative overflow-hidden rounded-full">
           <div
-            className="h-full bg-gray-400 transition-all duration-50 ease-out rounded-full"
+            className="h-full bg-white transition-all duration-50 ease-out rounded-full"
             style={{ width: `${progress}%` }}
           />
         </div>
