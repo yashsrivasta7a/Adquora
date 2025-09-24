@@ -46,11 +46,11 @@ export default function PageClient() {
   return (
     <div className="relative bg-black">
       <div className="fixed top-0 left-0 right-0 z-50 h-auto">
-        <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-6"> 
+        {/* <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-6"> 
           <Button onClick={toggleMenu}>
             MENU
           </Button>
-        </nav>
+        </nav> */}
         {/* Navigation Menu Overlay */}
         <NavigationMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       </div>
