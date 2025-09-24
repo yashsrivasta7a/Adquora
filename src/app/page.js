@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { NavigationMenu } from "../components/ui";
 import { Button } from "../components/ui";
 import InfiniteScrollingLogosAnimation from "../components/ui/Infinite-Scrolling-Logos-Animation";
@@ -12,7 +12,7 @@ import { Logo } from "./Clients/Page";
 import Testimonials from "./Testimonal/Page";
 import Footer from "./Footer/Page";
 import ContactPage from "./contact/page";
-
+import Image from "next/image";
 
 export default function PageClient() {
   const [showLanding, setShowLanding] = useState(false);
@@ -25,10 +25,10 @@ export default function PageClient() {
 
   useEffect(() => {
     if (!showLanding) return;
-    
+
     const handleScroll = () => {
-      if (typeof window === 'undefined') return;
-      
+      if (typeof window === "undefined") return;
+
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.documentElement.scrollHeight;
@@ -36,8 +36,8 @@ export default function PageClient() {
         setShowBasicDemo(true);
       }
     };
-    
-    if (typeof window !== 'undefined') {
+
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
@@ -46,15 +46,23 @@ export default function PageClient() {
   return (
     <div className="relative bg-black">
       <div className="fixed top-0 left-0 right-0 z-50 h-auto">
+        <div className="mt-1.5">
+          <Image src="/logo.svg" alt="Logo Image" width={100} height={100} />
+        </div>
         {/* <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-6"> 
           <Button onClick={toggleMenu}>
             MENU
           </Button>
         </nav> */}
         {/* Navigation Menu Overlay */}
-        <NavigationMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+        <NavigationMenu
+          isOpen={isMenuOpen}
+          onClose={() => setIsMenuOpen(false)}
+        />
       </div>
-      {!showLanding && <TypographyPreloader onComplete={() => setShowLanding(true)} />}
+      {!showLanding && (
+        <TypographyPreloader onComplete={() => setShowLanding(true)} />
+      )}
       {showLanding && (
         <>
           <div id="home-section">
@@ -70,7 +78,7 @@ export default function PageClient() {
             <LogoShowcase />
           </div>
           <Testimonials />
-          <ContactPage/>
+          <ContactPage />
           <Footer />
         </>
       )}
