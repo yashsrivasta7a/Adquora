@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send, ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
 import NavigationMenu  from "@/components/ui/navigation-menu";
 import Button  from "@/components/ui/button";
+import Footer from "../Footer/Page";
+import { TopNavBar } from "../Landing/Page";
 
 const EdgeGlow = ({ position, color }) => (
   <div 
@@ -168,53 +170,17 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white overflow-hidden">
-      {/* Menu Button and Overlay */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-auto">
-        <nav className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center p-3 xs:p-4 sm:p-6"> 
-          <Button onClick={() => setIsMenuOpen(true)} variant="secondary">
-            MENU
-          </Button>
-        </nav>
-        <NavigationMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-      </div>
+    <div className="w-full bg-[#070B11] min-h-screen flex flex-col font-sans">
+      <TopNavBar />
 
-      {/* Background Effects */}
-      <BackgroundRippleEffect className="opacity-20" />
-      <EdgeGlow position="top-left" color="rgba(59, 130, 246, 0.15)" />
-      {/* <EdgeGlow position="top-right" color="rgba(59, 130, 246, 0.10)" />
-      <EdgeGlow position="bottom-left" color="rgba(59, 130, 246, 0.10)" />
-      <EdgeGlow position="bottom-right" color="rgba(59, 130, 246, 0.15)" /> */}
+      <section className="relative w-full flex-grow text-white overflow-hidden pt-32 pb-16">
+        
+        {/* Noise filter */}
+      <div className="absolute inset-0 opacity-[0.015] z-0 pointer-events-none mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
 
-      {/* Floating Orbs */}
-      <motion.div
-        variants={floatingVariants}
-        animate="float"
-        className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-32 sm:h-32 w-16 h-16 rounded-full bg-blue-500/5 blur-xl"
-      />
-      <motion.div
-        variants={floatingVariants}
-        animate="float"
-        style={{ animationDelay: "3s" }}
-        className="absolute top-3/4 right-1/4 w-40 h-40 sm:w-40 sm:h-40 w-20 h-20 rounded-full bg-blue-500/5 blur-xl"
-      />
+      {/* Intense Core Glow behind the contact form */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[120%] bg-blue-600/10 blur-[150px] rounded-[100%] pointer-events-none z-0" />
 
-      {/* Mesh Gradient Background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-blue-600/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-600/5 to-transparent" />
-      </div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="w-full h-full" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
 
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 py-12 xs:py-16 sm:py-20">
         {/* Header Section */}
@@ -228,9 +194,9 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl xs:text-3xl sm:text-6xl md:text-7xl font-bold mb-3 xs:mb-4 sm:mb-6 text-white"
+            className="text-3xl sm:text-5xl md:text-7xl font-medium tracking-tight mb-4 sm:mb-6 text-white"
           >
-            Get In <span className="text-blue-400">Touch</span>
+            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 italic font-light">connect.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -250,9 +216,9 @@ const ContactPage = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-xl" />
-            <div className="relative bg-gray-900/50 backdrop-blur-lg rounded-3xl p-3 xs:p-4 sm:p-8 border border-gray-800/50">
-              <h2 className="text-lg xs:text-xl sm:text-3xl font-bold mb-3 xs:mb-4 sm:mb-6 text-blue-400">
+            <div className="absolute inset-0 bg-blue-500/5 rounded-[2rem] blur-xl" />
+            <div className="relative bg-[#111A2C]/40 backdrop-blur-2xl rounded-[2rem] p-6 xs:p-8 sm:p-10 border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
+              <h2 className="text-xl xs:text-2xl sm:text-3xl font-medium tracking-tight mb-4 xs:mb-6 sm:mb-8 text-white">
                 Send us a message
               </h2>
 
@@ -281,7 +247,7 @@ const ContactPage = () => {
               <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                 <div className="grid md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-3 xs:gap-4 sm:gap-6">
                   <div>
-                    <label className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
+                    <label className="block text-xs xs:text-sm font-medium text-gray-400 mb-1 xs:mb-2">
                       Full Name *
                     </label>
                     <input
@@ -289,8 +255,8 @@ const ContactPage = () => {
                       type="text"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-2 py-1.5 xs:px-3 xs:py-2 sm:px-4 sm:py-3 bg-gray-800/50 border border-gray-700 rounded-lg xs:rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none text-white placeholder-gray-400 text-xs xs:text-sm sm:text-base"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 bg-[#070B11]/50 border border-white/5 rounded-xl focus:border-blue-500/50 focus:bg-blue-500/[0.02] focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white placeholder-gray-600 text-sm"
+                      placeholder="Your Full Name"
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-400">{errors.name}</p>
@@ -298,7 +264,7 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-white mb-2">
+                    <label className="block text-xs xs:text-sm font-medium text-gray-400 mb-1 xs:mb-2">
                       Email Address *
                     </label>
                     <input
@@ -306,7 +272,7 @@ const ContactPage = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 sm:px-4 sm:py-3 px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none text-white placeholder-gray-400 text-sm sm:text-base"
+                      className="w-full px-4 py-3 bg-[#070B11]/50 border border-white/5 rounded-xl focus:border-blue-500/50 focus:bg-blue-500/[0.02] focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white placeholder-gray-600 text-sm"
                       placeholder="john@company.com"
                     />
                     {errors.email && (
@@ -316,7 +282,7 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-xs xs:text-sm font-medium text-gray-400 mb-1 xs:mb-2">
                     Company (Optional)
                   </label>
                   <input
@@ -324,13 +290,13 @@ const ContactPage = () => {
                     type="text"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:px-4 sm:py-3 px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none text-white placeholder-gray-400 text-sm sm:text-base"
+                    className="w-full px-4 py-3 bg-[#070B11]/50 border border-white/5 rounded-xl focus:border-blue-500/50 focus:bg-blue-500/[0.02] focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white placeholder-gray-600 text-sm"
                     placeholder="Your Company"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-xs xs:text-sm font-medium text-gray-400 mb-1 xs:mb-2">
                     Subject *
                   </label>
                   <input
@@ -338,7 +304,7 @@ const ContactPage = () => {
                     type="text"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:px-4 sm:py-3 px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none text-white placeholder-gray-400 text-sm sm:text-base"
+                    className="w-full px-4 py-3 bg-[#070B11]/50 border border-white/5 rounded-xl focus:border-blue-500/50 focus:bg-blue-500/[0.02] focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white placeholder-gray-600 text-sm"
                     placeholder="How can we help you?"
                   />
                   {errors.subject && (
@@ -347,7 +313,7 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-xs xs:text-sm font-medium text-gray-400 mb-1 xs:mb-2">
                     Message *
                   </label>
                   <textarea
@@ -355,7 +321,7 @@ const ContactPage = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:px-4 sm:py-3 px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none text-white placeholder-gray-400 resize-none text-sm sm:text-base"
+                    className="w-full px-4 py-3 bg-[#070B11]/50 border border-white/5 rounded-xl focus:border-blue-500/50 focus:bg-blue-500/[0.02] focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white placeholder-gray-600 resize-none text-sm"
                     placeholder="Tell us about your project, goals, and how we can help..."
                   />
                   {errors.message && (
@@ -369,7 +335,7 @@ const ContactPage = () => {
                   onClick={handleSubmit}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 sm:px-8 sm:py-4 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                  className="w-full px-8 py-4 sm:px-8 sm:py-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
                   {isSubmitting ? (
                     <>
@@ -415,11 +381,13 @@ const ContactPage = () => {
                   className="block group"
                 >
                   <div className="relative">
-                    <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-xl group-hover:blur-none transition-all duration-300" />
-                    <div className="relative bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 sm:p-6 p-4 border border-gray-800/50 group-hover:border-gray-700/70 transition-all duration-300">
-                      <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                        <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-lg xs:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <info.icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white" />
+                    <div className="absolute inset-0 bg-blue-500/5 rounded-2xl blur-xl group-hover:bg-blue-500/10 transition-all duration-500" />
+                    <div className="relative bg-[#111A2C]/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-6 p-4 border border-white/10 group-hover:border-blue-500/30 shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] transition-all duration-500 group-hover:-translate-y-1">
+                      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 group-hover:via-blue-400/50 to-transparent transition-colors duration-500" />
+                      
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#070B11] border border-white/10 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:border-blue-500/30 transition-all duration-500">
+                          <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                         </div>
                         <div className="flex-1">
                           <h3 className="text-sm xs:text-lg sm:text-xl font-semibold text-white mb-0.5 xs:mb-1">{info.title}</h3>
@@ -441,6 +409,9 @@ const ContactPage = () => {
           </motion.div>
         </div>
       </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };

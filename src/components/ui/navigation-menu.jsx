@@ -53,7 +53,7 @@ const NavigationMenu = ({ isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-50 bg-gradient-to-br from-gray-900 to-black bg-opacity-95 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-gradient-to-br from-gray-900 to-black bg-opacity-5 backdrop-blur-lg"
         >
           <div className="flex min-h-full w-full flex-col">
             {/* Close Button */}
@@ -83,7 +83,7 @@ const NavigationMenu = ({ isOpen, onClose }) => {
                   <div className="relative flex items-start">
                     <TextRoll
                       center
-                      className="text-5xl font-extrabold uppercase leading-[8] tracking-[-0.03em] transition-colors lg:text-5xl text-white hover:text-blue-400"
+                      className="text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.2] tracking-[-0.03em] transition-colors text-white hover:text-blue-400"
                     >
                       {item.name}
                     </TextRoll>
